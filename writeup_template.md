@@ -60,7 +60,7 @@ Then, I combined the drawn line with the original image.
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by separating the left and right lines segments by their value of slope. I assume that left lanes are those with negatives slope (< -0.2 for instance) and the right lanes are those with positive slope (> 0.2 for instance).
 
-Then I used np.polyfit() to fit for each of the left and right line. Then, to draw the lines, I used the bottom of the image and values close to the ROI as bounding boxes for lines. I drew the lines based on these fitted points so that it looks like there are one line for each of left and right lane.
+Then I used np.polyfit() or cv2 version of RANSAC to fit for each of the left and right line. Then, to draw the lines, I used the bottom of the image and values close to the ROI as bounding boxes for lines. I drew the lines based on these fitted points so that it looks like there are one line for each of left and right lane.
 
 
 ### 2. Identify potential shortcomings with your current pipeline
